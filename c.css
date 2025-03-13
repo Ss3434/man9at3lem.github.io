@@ -1,0 +1,239 @@
+/* c.css */
+:root {
+    --bg-primary: #0F172A;
+    --bg-secondary: #1E293B;
+    --text-primary: #F8FAFC;
+    --text-secondary: #94A3B8;
+    --accent-primary: #3B82F6;
+    --accent-secondary: #1D4ED8;
+    --success: #22C55E;
+    --error: #EF4444;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Cairo', sans-serif;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.6;
+}
+
+.navbar {
+    background-color: var(--bg-secondary);
+    padding: 0.5rem 0;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.nav-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.logo-icon {
+    font-size: 1.5rem;
+}
+
+.logo-text {
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+.grade-badge {
+    background-color: var(--accent-primary);
+    padding: 0.5rem 1rem;
+    border-radius: 9999px;
+    font-size: 0.875rem;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.page-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.page-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.page-header p {
+    color: var(--text-secondary);
+}
+
+.subjects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.subject-card {
+    background-color: var(--bg-secondary);
+    border-radius: 1rem;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.subject-card:hover {
+    transform: translateY(-4px);
+}
+
+.subject-icon {
+    padding: 2rem;
+    text-align: center;
+    font-size: 2.5rem;
+}
+
+.subject-content {
+    padding: 1.5rem;
+}
+
+.subject-content h2 {
+    margin-bottom: 0.5rem;
+}
+
+.subject-content p {
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+}
+
+.subject-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.chapters {
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+}
+
+.start-btn {
+    background-color: var(--accent-primary);
+    color: var(--text-primary);
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.start-btn:hover {
+    background-color: var(--accent-secondary);
+}
+
+/* Study Page Styles */
+.study-page .container {
+    padding: 1rem 2rem;
+}
+
+.study-layout {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.pdf-section {
+    background-color: var(--bg-secondary);
+    border-radius: 1rem;
+    padding: 1rem;
+}
+
+.pdf-controls {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.zoom-btn {
+    background-color: var(--accent-primary);
+    color: var(--text-primary);
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
+
+.pdf-container {
+    background-color: white;
+    border-radius: 0.5rem;
+    overflow: hidden;
+}
+
+#pdf-frame {
+    width: 100%;
+    height: 75vh;
+    border: none;
+}
+
+.notes-section {
+    background-color: var(--bg-secondary);
+    border-radius: 1rem;
+    padding: 1rem;
+}
+
+.notes-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.notes-controls {
+    display: flex;
+    gap: 0.5rem;
+}
+
+#notes {
+    width: 100%;
+    height: calc(75vh - 4rem);
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    border: 1px solid var(--text-secondary);
+    border-radius: 0.5rem;
+    padding: 1rem;
+    resize: none;
+    font-family: 'Cairo', sans-serif;
+}
+
+.notification {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    padding: 1rem 2rem;
+    border-radius: 0.5rem;
+    background-color: var(--success);
+    color: white;
+    transform: translateY(200%);
+    transition: transform 0.3s ease;
+}
+
+.notification.show {
+    transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+    .study-layout {
+        grid-template-columns: 1fr;
+    }
+}
