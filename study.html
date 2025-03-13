@@ -1,0 +1,160 @@
+<!-- study.html -->
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>منصة التعلم | الدراسة</title>
+    <link rel="stylesheet" href="c.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="study-page">
+    <nav class="navbar">
+        
+        <style>
+            /* c.css */
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap');
+
+
+
+
+.buttons-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 16px;
+}
+
+.save-btn,
+.back-btn,
+.control-btn,
+.clear-btn {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 8px 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    margin-left: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.save-btn:hover,
+.clear-btn:hover {
+    background-color: #0056b3;
+}
+
+.save-btn:focus,
+.clear-btn:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5);
+}
+
+.save-btn:active,
+.back-btn:active,
+.control-btn:active,
+.clear-btn:active {
+    transform: translateY(1px);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+.back-btn:hover,
+.control-btn:hover,
+.zoom-btn:hover,
+.save-btn:hover,
+.clear-btn:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.back-btn span:first-child {
+    margin-left: 8px;
+}
+
+.control-btn span:first-child {
+    margin-left: 8px;
+}
+
+.zoom-btn {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    font-size: 18px;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.zoom-btn:hover {
+    background-color: #0056b3;
+}
+
+.save-btn,
+.clear-btn {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    font-size: 14px;
+    padding: 8px 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.save-btn:hover,
+.clear-btn:hover {
+    background-color: #0056b3;
+}
+        </style>
+        <div class="nav-content">
+            <button onclick="goBack()" class="back-btn">
+                <span>⬅</span>
+                <span>الرجوع</span>
+            </button>
+            <div class="study-controls">
+                <button id="downloadNotes" class="control-btn">
+                    <span>⬇️</span>
+                    <span>تحميل الملاحظات</span>
+                </button>
+                <button id="toggleView" class="control-btn">
+                    <span>🔄</span>
+                    <span>تغيير العرض</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container study-container">
+        <h1 id="subject-title" class="study-title"></h1>
+        
+        <div class="study-layout">
+            <div class="pdf-section">
+                <div class="pdf-controls">
+                    <button onclick="adjustZoom('in')" class="zoom-btn">+</button>
+                    <span id="zoom-level">100%</span>
+                    <button onclick="adjustZoom('out')" class="zoom-btn">-</button>
+                </div>
+                <div class="pdf-container">
+                    <iframe id="pdf-frame" src=""></iframe>
+                </div>
+            </div>
+
+            <div class="notes-section">
+                <div class="notes-header">
+                    <h2>ملاحظاتي</h2>
+                    <div class="notes-controls">
+                        <button id="saveNotes" class="save-btn">حفظ ✓</button>
+                        <button onclick="clearNotes()" class="clear-btn">مسح ×</button>
+                    </div>
+                </div>
+                <textarea id="notes" placeholder="اكتب ملاحظاتك هنا..."></textarea>
+            </div>
+        </div>
+    </div>
+
+    <div id="notification" class="notification"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
